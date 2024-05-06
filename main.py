@@ -192,8 +192,9 @@ def histogram_sample_every_kth_point(k=10):
 # comparaison_mean(df)
 
 # Temperature rate of change over the day
-# df = generate_greenhouse_data("datasets/greenhouse.csv")
-# hcor = hourly_rate_of_change(df)
+df = generate_greenhouse_data("datasets/greenhouse.csv")
+hcor = hourly_rate_of_change(df)
+print(hcor)
 # hcor.plot()
 # plt.xlabel("Hour of the day")
 # plt.ylabel("Average absolute rate of change (°C/hour)")
@@ -202,8 +203,8 @@ def histogram_sample_every_kth_point(k=10):
 # plt.xlabel("Hour of the day")
 # plt.show()
 
-df = generate_greenhouse_data("datasets/greenhouse.csv")
-comparaison_mean(df, 1000)
+# df = generate_greenhouse_data("datasets/greenhouse.csv")
+# comparaison_mean(df, 1000)
 
 # example_sample_every_kth_point(1)
 # example_sample_every_kth_point(10)
