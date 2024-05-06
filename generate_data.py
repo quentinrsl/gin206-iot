@@ -4,6 +4,19 @@ from opensimplex import OpenSimplex
 import datetime
 
 def generate_greenhouse_data(filepath):
+    """
+    Generate filtered greenhouse data from a CSV file.
+    
+    Parameters:
+    filepath (str): The path to the CSV file.
+    
+    Returns:
+    pandas.DataFrame: The filtered greenhouse data.
+    """
+    
+    # Rest of the code...
+def generate_greenhouse_data(filepath):
+
     # Read the CSV file into a DataFrame, parsing 'time' as datetime
     df = pd.read_csv(filepath, parse_dates=["time"], dtype={"id": str, "value": float})
     
@@ -25,6 +38,21 @@ def generate_greenhouse_data(filepath):
 
 
 def generate_simplex(start_time=None, end_time=None, interval=600, max_temp=30, min_temp=10, frequency=10):
+    """
+    Generate a DataFrame with time and temperature values using Simplex noise.
+
+    Parameters:
+    - start_time (datetime): The start time for generating the data. If not provided, it defaults to 1 day before the end_time.
+    - end_time (datetime): The end time for generating the data. If not provided, it defaults to the current time.
+    - interval (int): The time interval in seconds between each data point. Defaults to 600 seconds (10 minutes).
+    - max_temp (float): The maximum temperature value. Defaults to 30.
+    - min_temp (float): The minimum temperature value. Defaults to 10.
+    - frequency (int): The frequency parameter for the Simplex noise generator. Defaults to 10.
+
+    Returns:
+    - df (DataFrame): A pandas DataFrame with 'time' and 'value' columns representing the generated time and temperature values.
+    """
+    
     # Default time settings if none provided
     if end_time is None:
         end_time = datetime.datetime.now()
